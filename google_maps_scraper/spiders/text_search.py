@@ -5,7 +5,15 @@ import json
 class TextSearchSpider(scrapy.Spider):
     name = "text_search"
     allowed_domains = ["google.com"]
-    start_urls = ["https://google.com"]
+
+    @classmethod
+    def update_settings(cls, settings):
+        super().update_settings(settings)
+        headers = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en",  # TODO: make this configurable
+        }
+        settings.set("DEFAULT_REQUEST_HEADERS", headers, priority="spider")
 
     def __init__(self, query='', *args, **kwargs):
         super(TextSearchSpider, self).__init__(*args, **kwargs)
@@ -14,7 +22,7 @@ class TextSearchSpider(scrapy.Spider):
             raise ValueError('query is required')
 
         query = query.replace(' ', '+')
-        self.start_urls = [f'https://google.com/maps/search/{query}/']
+        self.start_urls = [f'https://www.google.com/maps/search/{query}/']
 
     def parse(self, response):
         script = response.xpath('//script[contains(text(), "window.APP_INITIALIZATION_STATE")]/text()').get()
