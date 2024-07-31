@@ -25,7 +25,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.spider = list(process.crawlers)[0].spider
 
     def test_parse_id(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -35,7 +35,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['id'], expected_result['id'])
 
     def test_parse_primaryType(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -44,8 +44,18 @@ class TestTextSearchSpider(BetamaxTestCase):
 
         self.assertEqual(result['primaryType'], expected_result['primaryType'])
 
+    # def test_types(self):  # TODO check if is possible to get the types
+    #     mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
+    #     with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+    #         expected_result = json.load(f)
+    #
+    #     generator = self.spider.parse(mock_response)
+    #     result = next(generator)
+    #
+    #     self.assertEqual(result['types'], expected_result['types'])
+
     def test_parse_nationalPhoneNumber(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -55,7 +65,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['nationalPhoneNumber'], expected_result['nationalPhoneNumber'])
 
     def test_parse_internationalPhoneNumber(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -65,7 +75,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['internationalPhoneNumber'], expected_result['internationalPhoneNumber'])
 
     def test_parse_formattedAddress(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -75,7 +85,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['formattedAddress'], expected_result['formattedAddress'])
 
     def test_parse_location(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
         decimal_numbers = 7
@@ -89,7 +99,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['location'], expected_result['location'])
 
     def test_parse_rating(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -99,7 +109,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['rating'], expected_result['rating'])
 
     def test_parse_googleMapsUri(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -109,7 +119,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['googleMapsUri'], expected_result['googleMapsUri'])
 
     def test_parse_displayName(self):
-        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
         expected_result['displayName'].pop('languageCode')
@@ -120,7 +130,11 @@ class TestTextSearchSpider(BetamaxTestCase):
         self.assertEqual(result['displayName'], expected_result['displayName'])
 
     def get_mock_response(self, url):
-        response = self.session.get(url)
+        headers = {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en",  # TODO: make this configurable
+        }
+        response = self.session.get(url, headers=headers)
         if response.ok is False:
             raise ValueError(f'Request to {url} failed with status code {response.status_code}')
         scrapy_response = HtmlResponse(url=url, body=response.content)
