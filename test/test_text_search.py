@@ -1,4 +1,5 @@
 import os
+import json
 from betamax import Betamax
 from betamax.fixtures.unittest import BetamaxTestCase
 from scrapy.crawler import CrawlerProcess
@@ -20,18 +21,19 @@ class TestTextSearchSpider(BetamaxTestCase):
         super().setUp()
 
         process = CrawlerProcess(install_root_handler=False)
-        process.crawl(TextSearchSpider)
+        process.crawl(TextSearchSpider, query='filler text to satisfy the query requirement')
         self.spider = list(process.crawlers)[0].spider
 
     def test_parse_name(self):
-        # TODO
-        # restaurants in sydney
-        # mock_response =
-        expected_result = 'Restaurant Hubert'
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+        expected_result['displayName'].pop('languageCode')
 
-        result = {}
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
 
-        self.assertEqual(result['name'], expected_result)
+        self.assertEqual(result['displayName'], expected_result['displayName'])
 
     def get_mock_response(self, url):
         response = self.session.get(url)
