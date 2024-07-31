@@ -24,6 +24,86 @@ class TestTextSearchSpider(BetamaxTestCase):
         process.crawl(TextSearchSpider, query='filler text to satisfy the query requirement')
         self.spider = list(process.crawlers)[0].spider
 
+    def test_parse_id(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['id'], expected_result['id'])
+
+    def test_parse_primaryType(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['primaryType'], expected_result['primaryType'])
+
+    def test_parse_nationalPhoneNumber(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['nationalPhoneNumber'], expected_result['nationalPhoneNumber'])
+
+    def test_parse_internationalPhoneNumber(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['internationalPhoneNumber'], expected_result['internationalPhoneNumber'])
+
+    def test_parse_formattedAddress(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['formattedAddress'], expected_result['formattedAddress'])
+
+    def test_parse_location(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['location'], expected_result['location'])
+
+    def test_parse_rating(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['rating'], expected_result['rating'])
+
+    def test_parse_googleMapsUri(self):
+        mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        generator = self.spider.parse(mock_response)
+        result = next(generator)
+
+        self.assertEqual(result['googleMapsUri'], expected_result['googleMapsUri'])
+
     def test_parse_name(self):
         mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
