@@ -34,15 +34,16 @@ class TestTextSearchSpider(BetamaxTestCase):
 
         self.assertEqual(result['id'], expected_result['id'])
 
-    def test_parse_primaryType(self):
+    def test_parse_primaryTypeDisplayName(self):
         mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
+        expected_result['primaryTypeDisplayName'].pop('languageCode')
 
         generator = self.spider.parse(mock_response)
         result = next(generator)
 
-        self.assertEqual(result['primaryType'], expected_result['primaryType'])
+        self.assertEqual(result['primaryTypeDisplayName'], expected_result['primaryTypeDisplayName'])
 
     # def test_types(self):  # TODO check if is possible to get the types
     #     mock_response = self.get_mock_response(f'https://www.google.com/maps/search/restaurants+in+sydney/')

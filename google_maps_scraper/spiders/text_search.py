@@ -41,7 +41,9 @@ class TextSearchSpider(scrapy.Spider):
 
             _id = data4[78]
             types = data4[13]
-            primaryType = types[0]
+            primaryTypeDisplayName = {
+                'text': types[0],
+            }
             nationalPhoneNumber = data4[178][0][1][0][0]
             internationalPhoneNumber = data4[178][0][0]
             formattedAddress = data4[39]
@@ -57,7 +59,8 @@ class TextSearchSpider(scrapy.Spider):
 
             yield {
                 'id': _id,
-                'primaryType': primaryType,
+                'primaryTypeDisplayName': primaryTypeDisplayName,
+                # 'types': types,
                 'nationalPhoneNumber': nationalPhoneNumber,
                 'internationalPhoneNumber': internationalPhoneNumber,
                 'formattedAddress': formattedAddress,
