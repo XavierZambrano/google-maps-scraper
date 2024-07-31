@@ -104,7 +104,7 @@ class TestTextSearchSpider(BetamaxTestCase):
 
         self.assertEqual(result['googleMapsUri'], expected_result['googleMapsUri'])
 
-    def test_parse_name(self):
+    def test_parse_displayName(self):
         mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
