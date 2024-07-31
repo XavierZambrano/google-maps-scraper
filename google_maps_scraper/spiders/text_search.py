@@ -36,7 +36,7 @@ class TextSearchSpider(scrapy.Spider):
             primaryType = types[0]
             nationalPhoneNumber = data4[178][0][1][1][1]
             internationalPhoneNumber = data4[178][0][0]
-            formattedAddress = data4[18]
+            formattedAddress = data4[39]
             location = {
                 'latitude': data4[9][2],
                 'longitude': data4[9][3],
