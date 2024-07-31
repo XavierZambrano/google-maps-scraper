@@ -1,5 +1,9 @@
 import scrapy
 import json
+from dotenv import load_dotenv
+
+
+load_dotenv()  # load HTTP_PROXY and HTTPS_PROXY from .env file
 
 
 class TextSearchSpider(scrapy.Spider):
