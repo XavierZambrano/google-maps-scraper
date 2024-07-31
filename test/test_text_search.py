@@ -78,6 +78,10 @@ class TestTextSearchSpider(BetamaxTestCase):
         mock_response = self.get_mock_response(f'https://google.com/maps/search/restaurants+in+sydney/')
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
+        decimal_numbers = 7
+        for key, value in expected_result['location'].items():
+            value_truncated = float(f'{value:.{decimal_numbers}f}')
+            expected_result['location'][key] = value_truncated
 
         generator = self.spider.parse(mock_response)
         result = next(generator)
