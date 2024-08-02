@@ -2,6 +2,7 @@ import scrapy
 import json
 from dotenv import load_dotenv
 
+from google_maps_scraper.utils import GOOGLE_SUPPORTED_LANGUAGES
 
 load_dotenv()  # load HTTP_PROXY and HTTPS_PROXY from .env file
 
@@ -10,23 +11,17 @@ class TextSearchSpider(scrapy.Spider):
     name = "text_search"
     allowed_domains = ["google.com"]
 
-    @classmethod
-    def update_settings(cls, settings):
-        super().update_settings(settings)
-        headers = {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en",  # TODO: make this configurable
-        }
-        settings.set("DEFAULT_REQUEST_HEADERS", headers, priority="spider")
-
-    def __init__(self, query='', *args, **kwargs):
+    def __init__(self, query='', language='en', *args, **kwargs):
         super(TextSearchSpider, self).__init__(*args, **kwargs)
 
         if not query:
             raise ValueError('query is required')
 
+        if language not in GOOGLE_SUPPORTED_LANGUAGES.values():
+            raise ValueError(f'language {language} is not supported, please use one of: {json.dumps(GOOGLE_SUPPORTED_LANGUAGES, indent=2)}')
+
         query = query.replace(' ', '+')
-        self.start_urls = [f'https://www.google.com/maps/search/{query}/']
+        self.start_urls = [f'https://www.google.com/maps/search/?api=1&query={query}&hl={language}']
 
     def parse(self, response):
         script = response.xpath('//script[contains(text(), "window.APP_INITIALIZATION_STATE")]/text()').get()
