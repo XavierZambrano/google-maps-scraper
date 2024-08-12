@@ -36,19 +36,24 @@ class TextSearchSpider(scrapy.Spider):
             yield Request(url, dont_filter=True, meta={'offset': 0})
 
     def parse(self, response):
-        script = response.xpath('//script[contains(text(), "window.APP_INITIALIZATION_STATE")]/text()').get()
-        initialization_state = script.split('window.APP_INITIALIZATION_STATE=')[1].split('];')[0] + ']'
-        initialization_state_json = json.loads(initialization_state)
-        data1 = initialization_state_json[3]
-        data2 = data1[2]
+        if response.meta['offset'] == 0:
+            # first page
+            script = response.xpath('//script[contains(text(), "window.APP_INITIALIZATION_STATE")]/text()').get()
+            initialization_state = script.split('window.APP_INITIALIZATION_STATE=')[1].split('];')[0] + ']'
+            initialization_state_json = json.loads(initialization_state)
+            data1 = initialization_state_json[3]
+            data2 = data1[2]
 
-        data3 = json.loads(data2[5:])
+            data3 = json.loads(data2[5:])
+        else:
+            json_str1 = response.text[18:-6]
+            json_str = json_str1.replace('\\n', '').replace('\\"', '\"')
+            e_index = json_str.rfind('"e":')
+            data3 = json.loads(json_str[:e_index - 2])
 
         # skip the first one, it's other data [1:]
         for index, raw_data in enumerate(data3[0][1][1:]):
-            data4 = raw_data[14]
-            cid = data3[16][3][0][4][index][0][1]
-            item = get_place_data(cid, raw_data[14])
+            item = get_place_data(raw_data[14])
             yield item
 
         offset = response.meta['offset']
@@ -67,11 +72,12 @@ class TextSearchSpider(scrapy.Spider):
             yield Request(next_page_url, dont_filter=True, meta={'offset': next_offset})
 
 
-def get_place_data(cid, data4):
+def get_place_data(data4):
     colloquial_area = False
     decimal_numbers_coordinates = 7
 
     item = {}
+    cid = int(data4[10].split('0x')[-1], 16)
 
     item['id'] = data4[78]
     types = data4[13]
@@ -95,7 +101,7 @@ def get_place_data(cid, data4):
     }
     if data4[4]:
         item['rating'] = data4[4][7]
-    item['googleMapsUri'] = 'https://maps.google.com/?cid=' + cid
+    item['googleMapsUri'] = 'https://maps.google.com/?cid=' + str(cid)
     item['displayName'] = {
         'text': data4[11],
     }
