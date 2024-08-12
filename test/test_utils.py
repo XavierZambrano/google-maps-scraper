@@ -5,12 +5,9 @@ from google_maps_scraper.spiders.text_search import get_place_data
 
 
 class TestGetPlaceData(unittest.TestCase):
-    def setUp(self):
-        self.cid = '11838325964603896806'
-
     def test_get_place_data_id(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -18,7 +15,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_primaryTypeDisplayName(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
         expected_result['primaryTypeDisplayName'].pop('languageCode')
@@ -27,7 +24,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_nationalPhoneNumber(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -35,7 +32,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_internationalPhoneNumber(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -43,7 +40,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_formattedAddress(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -51,7 +48,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_location(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
         decimal_numbers = 7
@@ -63,7 +60,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_rating(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -71,7 +68,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_googleMapsUri(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -79,7 +76,7 @@ class TestGetPlaceData(unittest.TestCase):
 
     def test_get_place_data_displayName(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             expected_result = json.load(f)
         expected_result['displayName'].pop('languageCode')
@@ -88,12 +85,9 @@ class TestGetPlaceData(unittest.TestCase):
 
 
 class TestGetPlaceDataColloquialArea(unittest.TestCase):
-    def setUp(self):
-        self.cid = '216592143092983888'
-
     def test_get_place_data_id(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -101,25 +95,25 @@ class TestGetPlaceDataColloquialArea(unittest.TestCase):
 
     def test_get_place_data_primaryTypeDisplayName(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
 
         self.assertNotIn('primaryTypeDisplayName', place_data)
 
     def test_get_place_data_nationalPhoneNumber(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
 
         self.assertNotIn('nationalPhoneNumber', place_data)
 
     def test_get_place_data_internationalPhoneNumber(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
 
         self.assertNotIn('internationalPhoneNumber', place_data)
 
     def test_get_place_data_formattedAddress(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -127,7 +121,7 @@ class TestGetPlaceDataColloquialArea(unittest.TestCase):
 
     def test_get_place_data_location(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
             expected_result = json.load(f)
         decimal_numbers = 7
@@ -139,13 +133,13 @@ class TestGetPlaceDataColloquialArea(unittest.TestCase):
 
     def test_get_place_data_rating(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
 
         self.assertNotIn('rating', place_data)
 
     def test_get_place_data_googleMapsUri(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
             expected_result = json.load(f)
 
@@ -153,7 +147,7 @@ class TestGetPlaceDataColloquialArea(unittest.TestCase):
 
     def test_get_place_data_displayName(self):
         with open('test/assets/place_data_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
-            place_data = get_place_data(self.cid, json.load(f))
+            place_data = get_place_data(json.load(f))
         with open('test/expected/place_ChIJP3Sa8ziYEmsRUKgyFmh9AQM.json', 'r') as f:
             expected_result = json.load(f)
         expected_result['displayName'].pop('languageCode')
