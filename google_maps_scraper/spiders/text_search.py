@@ -11,14 +11,17 @@ class TextSearchSpider(scrapy.Spider):
     name = "text_search"
     allowed_domains = ["google.com"]
 
-    def __init__(self, query='', language='en', *args, **kwargs):
+    def __init__(self, query='', language='en', max_results=20, *args, **kwargs):
         super(TextSearchSpider, self).__init__(*args, **kwargs)
+
+        self.max_results = int(max_results)
 
         if not query:
             raise ValueError('query is required')
-
         if language not in GOOGLE_SUPPORTED_LANGUAGES.values():
             raise ValueError(f'language {language} is not supported, please use one of: {json.dumps(GOOGLE_SUPPORTED_LANGUAGES, indent=2)}')
+        if not (20 <= self.max_results <= 120 and self.max_results % 20 == 0):
+            raise ValueError('max_results must be between 20 and 120 and multiple of 20')
 
         query = query.replace(' ', '+')
         self.start_urls = [f'https://www.google.com/maps/search/?api=1&query={query}&hl={language}']
