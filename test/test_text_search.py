@@ -3,7 +3,7 @@ import json
 from betamax import Betamax
 from betamax.fixtures.unittest import BetamaxTestCase
 from scrapy.crawler import CrawlerProcess
-from scrapy.http import HtmlResponse
+from scrapy.http import HtmlResponse, Request
 
 from google_maps_scraper.spiders.text_search import TextSearchSpider
 
@@ -138,6 +138,14 @@ class TestTextSearchSpider(BetamaxTestCase):
         response = self.session.get(url, headers=headers)
         if response.ok is False:
             raise ValueError(f'Request to {url} failed with status code {response.status_code}')
-        scrapy_response = HtmlResponse(url=url, body=response.content)
+        
+        mock_request = Request(url=url, meta={'offset': 0})
+        
+        scrapy_response = HtmlResponse(
+            url=url,
+            body=response.content,
+            encoding='utf-8',
+            request=mock_request
+        )
 
         return scrapy_response
