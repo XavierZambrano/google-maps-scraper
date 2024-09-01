@@ -3,6 +3,7 @@ import json
 from dotenv import load_dotenv
 from scrapy import Request
 
+from google_maps_scraper.items import Place
 from google_maps_scraper.utils import GOOGLE_SUPPORTED_LANGUAGES
 
 load_dotenv()  # load HTTP_PROXY and HTTPS_PROXY from .env file
@@ -76,37 +77,37 @@ def get_place_data(data4):
     colloquial_area = False
     decimal_numbers_coordinates = 7
 
-    item = {}
+    place = Place()
     cid = int(data4[10].split('0x')[-1], 16)
 
-    item['id'] = data4[78]
+    place['id'] = data4[78]
     types = data4[13]
     if types:
-        item['primaryTypeDisplayName'] = {
+        place['primaryTypeDisplayName'] = {
             'text': types[0],
         }
     else:
         colloquial_area = True
     if data4[178]:
-        item['nationalPhoneNumber'] = data4[178][0][1][0][0]
-        item['internationalPhoneNumber'] = data4[178][0][0]
+        place['nationalPhoneNumber'] = data4[178][0][1][0][0]
+        place['internationalPhoneNumber'] = data4[178][0][0]
     if colloquial_area:
-        item['formattedAddress'] = data4[18]
+        place['formattedAddress'] = data4[18]
     else:
-        item['formattedAddress'] = data4[39]
+        place['formattedAddress'] = data4[39]
 
-    item['location'] = {
+    place['location'] = {
         'latitude': float(f'{data4[9][2]:.{decimal_numbers_coordinates}f}'),
         'longitude': float(f'{data4[9][3]:.{decimal_numbers_coordinates}f}'),
     }
     if data4[4]:
-        item['rating'] = data4[4][7]
-    item['googleMapsUri'] = 'https://maps.google.com/?cid=' + str(cid)
-    item['displayName'] = {
+        place['rating'] = data4[4][7]
+    place['googleMapsUri'] = 'https://maps.google.com/?cid=' + str(cid)
+    place['displayName'] = {
         'text': data4[11],
     }
 
-    return item
+    return place
 
 
 def get_protobuf(altitude, longitude, latitude, offset):
