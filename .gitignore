@@ -162,3 +162,7 @@ cython_debug/
 .idea/
 test/fixtures/
 test/_trial_temp/
+_trial_temp/
+.vscode/
+output/
+scratches/
