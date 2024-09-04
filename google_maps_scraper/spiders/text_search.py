@@ -2,7 +2,7 @@ import scrapy
 import json
 from dotenv import load_dotenv
 from scrapy import Request
-
+from openlocationcode.openlocationcode import encode as OLCencode
 from google_maps_scraper.items import Place
 from google_maps_scraper.utils import GOOGLE_SUPPORTED_LANGUAGES
 
@@ -102,10 +102,15 @@ def get_place_data(data4):
         place['formattedAddress'] = data4[18]
     else:
         place['formattedAddress'] = data4[39]
-
+    latitude = float(f'{data4[9][2]:.{decimal_numbers_coordinates}f}')
+    longitude = float(f'{data4[9][3]:.{decimal_numbers_coordinates}f}')
+    globalCode = OLCencode(latitude, longitude)
+    place['plusCode'] = {
+        'globalCode': globalCode,
+    }
     place['location'] = {
-        'latitude': float(f'{data4[9][2]:.{decimal_numbers_coordinates}f}'),
-        'longitude': float(f'{data4[9][3]:.{decimal_numbers_coordinates}f}'),
+        'latitude': latitude,
+        'longitude': longitude,
     }
     if data4[4]:
         place['rating'] = data4[4][7]
