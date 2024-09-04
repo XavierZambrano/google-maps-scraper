@@ -80,7 +80,9 @@ def get_place_data(data4):
     place = Place()
     cid = int(data4[10].split('0x')[-1], 16)
 
+
     place['id'] = data4[78]
+    place['name'] = f'places/{place["id"]}'
     types = data4[13]
     if types:
         place['primaryTypeDisplayName'] = {

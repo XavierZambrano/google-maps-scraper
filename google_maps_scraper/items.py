@@ -2,6 +2,9 @@ import scrapy
 
 
 class Place(scrapy.Item):
+    name = scrapy.Field()
+    
+
     id = scrapy.Field()
     primaryTypeDisplayName = scrapy.Field()
     nationalPhoneNumber = scrapy.Field()

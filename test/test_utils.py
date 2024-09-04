@@ -5,6 +5,14 @@ from google_maps_scraper.spiders.text_search import get_place_data
 
 
 class TestGetPlaceData(unittest.TestCase):
+    def test_get_place_data_name(self):
+        with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            place_data = get_place_data(json.load(f))
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        self.assertEqual(place_data['name'], expected_result['name'])
+
     def test_get_place_data_id(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
             place_data = get_place_data(json.load(f))
