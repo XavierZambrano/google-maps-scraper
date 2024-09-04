@@ -1,0 +1,779 @@
+{
+	"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg",
+	"id": "ChIJE0JkojOvEmsRvo_DkZ7zBBg",
+	"types": [
+		"vegan_restaurant",
+		"vegetarian_restaurant",
+		"chinese_restaurant",
+		"restaurant",
+		"point_of_interest",
+		"food",
+		"establishment"
+	],
+	"nationalPhoneNumber": "(02) 9904 2667",
+	"internationalPhoneNumber": "+61 2 9904 2667",
+	"formattedAddress": "Shop 13/166-174 Military Rd, Neutral Bay NSW 2089, Australia",
+	"addressComponents": [
+		{
+			"longText": "Shop 13",
+			"shortText": "Shop 13",
+			"types": [
+				"subpremise"
+			],
+			"languageCode": "en"
+		},
+		{
+			"longText": "166-174",
+			"shortText": "166-174",
+			"types": [
+				"street_number"
+			],
+			"languageCode": "en-US"
+		},
+		{
+			"longText": "Military Road",
+			"shortText": "Military Rd",
+			"types": [
+				"route"
+			],
+			"languageCode": "en"
+		},
+		{
+			"longText": "Neutral Bay",
+			"shortText": "Neutral Bay",
+			"types": [
+				"locality",
+				"political"
+			],
+			"languageCode": "en"
+		},
+		{
+			"longText": "North Sydney Council",
+			"shortText": "North Sydney",
+			"types": [
+				"administrative_area_level_2",
+				"political"
+			],
+			"languageCode": "en"
+		},
+		{
+			"longText": "New South Wales",
+			"shortText": "NSW",
+			"types": [
+				"administrative_area_level_1",
+				"political"
+			],
+			"languageCode": "en"
+		},
+		{
+			"longText": "Australia",
+			"shortText": "AU",
+			"types": [
+				"country",
+				"political"
+			],
+			"languageCode": "en"
+		},
+		{
+			"longText": "2089",
+			"shortText": "2089",
+			"types": [
+				"postal_code"
+			],
+			"languageCode": "en-US"
+		}
+	],
+	"plusCode": {
+		"globalCode": "4RRH569C+JP",
+		"compoundCode": "569C+JP Neutral Bay NSW, Australia"
+	},
+	"location": {
+		"latitude": -33.830937399999996,
+		"longitude": 151.22179839999998
+	},
+	"viewport": {
+		"low": {
+			"latitude": -33.832438580291495,
+			"longitude": 151.2203927697085
+		},
+		"high": {
+			"latitude": -33.829740619708495,
+			"longitude": 151.22309073029146
+		}
+	},
+	"rating": 4.7,
+	"googleMapsUri": "https://maps.google.com/?cid=1730776019193008062",
+	"websiteUri": "https://greensproutsvegetarian.com.au/",
+	"regularOpeningHours": {
+		"openNow": false,
+		"periods": [
+			{
+				"open": {
+					"day": 0,
+					"hour": 11,
+					"minute": 30
+				},
+				"close": {
+					"day": 0,
+					"hour": 15,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 0,
+					"hour": 17,
+					"minute": 0
+				},
+				"close": {
+					"day": 0,
+					"hour": 21,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 2,
+					"hour": 17,
+					"minute": 0
+				},
+				"close": {
+					"day": 2,
+					"hour": 21,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 3,
+					"hour": 11,
+					"minute": 30
+				},
+				"close": {
+					"day": 3,
+					"hour": 15,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 3,
+					"hour": 17,
+					"minute": 0
+				},
+				"close": {
+					"day": 3,
+					"hour": 21,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 4,
+					"hour": 11,
+					"minute": 30
+				},
+				"close": {
+					"day": 4,
+					"hour": 15,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 4,
+					"hour": 17,
+					"minute": 0
+				},
+				"close": {
+					"day": 4,
+					"hour": 21,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 5,
+					"hour": 11,
+					"minute": 30
+				},
+				"close": {
+					"day": 5,
+					"hour": 15,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 5,
+					"hour": 17,
+					"minute": 0
+				},
+				"close": {
+					"day": 5,
+					"hour": 21,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 6,
+					"hour": 11,
+					"minute": 30
+				},
+				"close": {
+					"day": 6,
+					"hour": 15,
+					"minute": 0
+				}
+			},
+			{
+				"open": {
+					"day": 6,
+					"hour": 17,
+					"minute": 0
+				},
+				"close": {
+					"day": 6,
+					"hour": 21,
+					"minute": 0
+				}
+			}
+		],
+		"weekdayDescriptions": [
+			"Monday: Closed",
+			"Tuesday: 5:00 – 9:00 PM",
+			"Wednesday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Thursday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Friday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Saturday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Sunday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM"
+		]
+	},
+	"utcOffsetMinutes": 600,
+	"adrFormatAddress": "Shop 13/\u003cspan class=\"street-address\"\u003e166-174 Military Rd\u003c/span\u003e, \u003cspan class=\"locality\"\u003eNeutral Bay\u003c/span\u003e \u003cspan class=\"region\"\u003eNSW\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e2089\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eAustralia\u003c/span\u003e",
+	"businessStatus": "OPERATIONAL",
+	"userRatingCount": 343,
+	"iconMaskBaseUri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+	"iconBackgroundColor": "#FF9E67",
+	"displayName": {
+		"text": "Green Sprouts Vegan Restaurant",
+		"languageCode": "en"
+	},
+	"primaryTypeDisplayName": {
+		"text": "Vegan restaurant",
+		"languageCode": "en"
+	},
+	"takeout": true,
+	"delivery": true,
+	"dineIn": true,
+	"curbsidePickup": false,
+	"reservable": true,
+	"servesBreakfast": true,
+	"servesLunch": true,
+	"servesDinner": true,
+	"servesWine": true,
+	"servesBrunch": true,
+	"servesVegetarianFood": true,
+	"currentOpeningHours": {
+		"openNow": false,
+		"periods": [
+			{
+				"open": {
+					"day": 0,
+					"hour": 11,
+					"minute": 30,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 8
+					}
+				},
+				"close": {
+					"day": 0,
+					"hour": 15,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 8
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 0,
+					"hour": 17,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 8
+					}
+				},
+				"close": {
+					"day": 0,
+					"hour": 21,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 8
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 2,
+					"hour": 17,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 10
+					}
+				},
+				"close": {
+					"day": 2,
+					"hour": 21,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 10
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 3,
+					"hour": 11,
+					"minute": 30,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 4
+					}
+				},
+				"close": {
+					"day": 3,
+					"hour": 15,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 4
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 3,
+					"hour": 17,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 4
+					}
+				},
+				"close": {
+					"day": 3,
+					"hour": 21,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 4
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 4,
+					"hour": 11,
+					"minute": 30,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 5
+					}
+				},
+				"close": {
+					"day": 4,
+					"hour": 15,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 5
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 4,
+					"hour": 17,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 5
+					}
+				},
+				"close": {
+					"day": 4,
+					"hour": 21,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 5
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 5,
+					"hour": 11,
+					"minute": 30,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 6
+					}
+				},
+				"close": {
+					"day": 5,
+					"hour": 15,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 6
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 5,
+					"hour": 17,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 6
+					}
+				},
+				"close": {
+					"day": 5,
+					"hour": 21,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 6
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 6,
+					"hour": 11,
+					"minute": 30,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 7
+					}
+				},
+				"close": {
+					"day": 6,
+					"hour": 15,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 7
+					}
+				}
+			},
+			{
+				"open": {
+					"day": 6,
+					"hour": 17,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 7
+					}
+				},
+				"close": {
+					"day": 6,
+					"hour": 21,
+					"minute": 0,
+					"date": {
+						"year": 2024,
+						"month": 9,
+						"day": 7
+					}
+				}
+			}
+		],
+		"weekdayDescriptions": [
+			"Monday: Closed",
+			"Tuesday: 5:00 – 9:00 PM",
+			"Wednesday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Thursday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Friday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Saturday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM",
+			"Sunday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM"
+		]
+	},
+	"primaryType": "vegan_restaurant",
+	"shortFormattedAddress": "Shop 13/166-174 Military Rd, Neutral Bay",
+	"reviews": [
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/reviews/ChdDSUhNMG9nS0VJQ0FnSUNIb04tT3F3RRAB",
+			"relativePublishTimeDescription": "in the last week",
+			"rating": 5,
+			"text": {
+				"text": "It was our first time at this restaurant and we can’t wait to go back 🤤. The food was so delicious, great portion sizes and freshly made . My favourite was the duck with pancakes along with the beautiful Mango pancakes . The staff are lovely and very welcoming.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "It was our first time at this restaurant and we can’t wait to go back 🤤. The food was so delicious, great portion sizes and freshly made . My favourite was the duck with pancakes along with the beautiful Mango pancakes . The staff are lovely and very welcoming.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Astrid Marshall",
+				"uri": "https://www.google.com/maps/contrib/107163669285453495710/reviews",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJr6EJja2A5TYK3nix7D64N54VWJCWX31fMmAmkYw5aINWn5Xo=s128-c0x00000000-cc-rp-mo-ba3"
+			},
+			"publishTime": "2024-08-30T21:38:47Z"
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/reviews/ChZDSUhNMG9nS0VJQ0FnSUNqb0lpVkdBEAE",
+			"relativePublishTimeDescription": "4 months ago",
+			"rating": 5,
+			"text": {
+				"text": "Delicious and authentic cooking. Taste and look of each dish mimics the real thing. I’m glad we came by to try this eatery as it didn’t disappoint. There’s quite a wait for the dishes since it’s freshly prepared (understandable). Pricing wise is quite affordable and won’t burn your pockets. Staff are friendly and service is prompt. We only felt the atmosphere a little noisy and crowded, which can’t be help as they are full house.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Delicious and authentic cooking. Taste and look of each dish mimics the real thing. I’m glad we came by to try this eatery as it didn’t disappoint. There’s quite a wait for the dishes since it’s freshly prepared (understandable). Pricing wise is quite affordable and won’t burn your pockets. Staff are friendly and service is prompt. We only felt the atmosphere a little noisy and crowded, which can’t be help as they are full house.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Veg-lycious",
+				"uri": "https://www.google.com/maps/contrib/116348907882474656762/reviews",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXjYCjI8Fn3hi3b8d7-Im8GQHoLHXJft1qdK3px-NzunPySlNAl=s128-c0x00000000-cc-rp-mo-ba5"
+			},
+			"publishTime": "2024-04-16T15:56:16Z"
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/reviews/ChZDSUhNMG9nS0VJQ0FnSURqdjZLWVZ3EAE",
+			"relativePublishTimeDescription": "3 months ago",
+			"rating": 5,
+			"text": {
+				"text": "Ok wow, the food here is some of the best vegetarian/vegan food I’ve ever tried. The Szechuan chilli chicken was very impressive, I’ve had many variations of this dish with chicken and this one with vegan chicken is just as good as the best meat ones I’ve had. The wok fried beans were stir fried perfectly and had a nice char and crunch to it.\n\nThe dumplings were incredible, we had the English spinach, mushroom and sweet corn, and pandan choysum dumplings. All were gluten free as well and exquisitely made, very soft skin that’s packed with delicious filling. They also had homemade chilli oil on each table and they were perfect to go with the dumplings.\n\nFor dessert I had the mango pancakes and they were awesome, fresh mango wrapped with delicious coconut cream and freshly made crepe. One of my favourite desserts.\n\nAll the food we had were gluten free except the chilli chicken and mango pancakes. My partner is coeliac and enjoyed the gluten free options with no issues. Will definitely be back!",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Ok wow, the food here is some of the best vegetarian/vegan food I’ve ever tried. The Szechuan chilli chicken was very impressive, I’ve had many variations of this dish with chicken and this one with vegan chicken is just as good as the best meat ones I’ve had. The wok fried beans were stir fried perfectly and had a nice char and crunch to it.\n\nThe dumplings were incredible, we had the English spinach, mushroom and sweet corn, and pandan choysum dumplings. All were gluten free as well and exquisitely made, very soft skin that’s packed with delicious filling. They also had homemade chilli oil on each table and they were perfect to go with the dumplings.\n\nFor dessert I had the mango pancakes and they were awesome, fresh mango wrapped with delicious coconut cream and freshly made crepe. One of my favourite desserts.\n\nAll the food we had were gluten free except the chilli chicken and mango pancakes. My partner is coeliac and enjoyed the gluten free options with no issues. Will definitely be back!",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Shane",
+				"uri": "https://www.google.com/maps/contrib/104285182931464316788/reviews",
+				"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIyvxbYUMFFdLL42oPixCHNUuTW7zXXAbSZSvwjO8PrzKCw=s128-c0x00000000-cc-rp-mo-ba5"
+			},
+			"publishTime": "2024-05-09T10:32:02Z"
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/reviews/ChdDSUhNMG9nS0VJQ0FnSUNqbHF1Z2l3RRAB",
+			"relativePublishTimeDescription": "4 months ago",
+			"rating": 5,
+			"text": {
+				"text": "We went here for yum cha with a group of 18 and it was an incredible meal. It's hard to pick what dishes were the best since as soon as they started being served, I entered a trance-like state of pure culinary bliss. My eyes glazed over as I frenetically grabbed at various dishes placed in front of me. I was all monkey brain, acting on pure instinct, driven purely by flavour. I felt as if I hadn't eaten for weeks (I had recently eaten breakfast).\n\nAfter blacking out, I came to eating the Mango Pancakes, so can at least say with certainty that these are insanely tasty. But I'm sure I could say that for anything on the menu.\n\nSo, I can highly recommended Green Sprouts for the variety of dishes, the consistent high quality of the dishes, the lovely staff and the fact that it's all vegan!\n\nThank you, will be back once I've finished processing this deeply spiritual experience.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "We went here for yum cha with a group of 18 and it was an incredible meal. It's hard to pick what dishes were the best since as soon as they started being served, I entered a trance-like state of pure culinary bliss. My eyes glazed over as I frenetically grabbed at various dishes placed in front of me. I was all monkey brain, acting on pure instinct, driven purely by flavour. I felt as if I hadn't eaten for weeks (I had recently eaten breakfast).\n\nAfter blacking out, I came to eating the Mango Pancakes, so can at least say with certainty that these are insanely tasty. But I'm sure I could say that for anything on the menu.\n\nSo, I can highly recommended Green Sprouts for the variety of dishes, the consistent high quality of the dishes, the lovely staff and the fact that it's all vegan!\n\nThank you, will be back once I've finished processing this deeply spiritual experience.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Jared Hill",
+				"uri": "https://www.google.com/maps/contrib/109283915106243755989/reviews",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVNEzVenXA1DMjrI21kjIUlOOpsrTsTkdeOJ1VEJPK-JDbR2PIF8g=s128-c0x00000000-cc-rp-mo-ba4"
+			},
+			"publishTime": "2024-04-22T08:22:06Z"
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/reviews/ChdDSUhNMG9nS0VJQ0FnSUM5dzV2MGlnRRAB",
+			"relativePublishTimeDescription": "5 months ago",
+			"rating": 5,
+			"text": {
+				"text": "Fantastic all vegan yum cha and Chinese food. Everything is delicious. Lovely decor, air conditioned, balcony seating, beautiful friendly staff and great service. We have been here many times and love it every time. Prices are very reasonable too.",
+				"languageCode": "en"
+			},
+			"originalText": {
+				"text": "Fantastic all vegan yum cha and Chinese food. Everything is delicious. Lovely decor, air conditioned, balcony seating, beautiful friendly staff and great service. We have been here many times and love it every time. Prices are very reasonable too.",
+				"languageCode": "en"
+			},
+			"authorAttribution": {
+				"displayName": "Leanne Porter",
+				"uri": "https://www.google.com/maps/contrib/105219133198802514621/reviews",
+				"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVMeJdRRrq_XMw7HnATmFitPY9tDy7C5da5HP2ojzp4P7YnUC8=s128-c0x00000000-cc-rp-mo"
+			},
+			"publishTime": "2024-03-09T03:00:26Z"
+		}
+	],
+	"photos": [
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q73eeNYowB5C8REzMoFHiBeKvCkx4FMKJh7bLMX0PvpI5pNq1NG7lpzD78i-W6bmSYUvrsTQ_2Nmv6boDkxPhaA7DITKPJJKsCl56_LjSkh9yTivtkkvjL9Li-mB7EcAIKO4VFWNeONzajv9hQcprYKnScFG-6mEhkV",
+			"widthPx": 1768,
+			"heightPx": 1409,
+			"authorAttributions": [
+				{
+					"displayName": "Green Sprouts Vegan Restaurant",
+					"uri": "https://maps.google.com/maps/contrib/116486935453137493123",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX30vCraLdZKkaDX6mqxrBchrDX2hCVnt41CvvVHnUukrllKzA=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q45eB_X1K-3gz-RHdaUdv0z6muExCneKL11jBSIFG3cO5lZ-AKz5UXAloRWZgGuqiaweJ8fcUyUDeQUOgvvzjSvNtX0v32YoNGAki5IWi9bTG_qZLzjmj2OaEGbo3xr_dbLU867IfAXitpFEdAT0F5XU9tm0KxjA77w",
+			"widthPx": 3643,
+			"heightPx": 4552,
+			"authorAttributions": [
+				{
+					"displayName": "Green Sprouts Vegan Restaurant",
+					"uri": "https://maps.google.com/maps/contrib/116486935453137493123",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX30vCraLdZKkaDX6mqxrBchrDX2hCVnt41CvvVHnUukrllKzA=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q5uJt5zpCYa27Sv0uzoPy1r6utrRcxkWYwXN_a8eXh08GBFV1nsSBgEe2Eccjo85Tq0JSBRV-dIjQzDYDKg1hX9-FE4vokFNfrosrGCPCJplIb1ftoPpofHVjDz7WcX0tXyh9BepsCkrleNG4FV-0NdfxMi1hcQuZ0m",
+			"widthPx": 4032,
+			"heightPx": 3024,
+			"authorAttributions": [
+				{
+					"displayName": "Haiting Lan",
+					"uri": "https://maps.google.com/maps/contrib/114752003463127566460",
+					"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLfcYf0QMmJM9hF9BxuF8ABI2vM5M63V2ytW-wOvRO0JadZ8w=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q5qVJDKKV8L2tgKYEgb1X3mh1K_BRg2IcPw8ZF4FViYJFA7vbjFXO9lMIwh7n2SvKdo4TMwadThA6t-MoRNotWuDIzaBGBvUnQP4EdHQlYpATw4TK31_pZiA9JxVhfQi7yfBmyPmsvO5m-Of-S9Lh_XX9SEyeCwhg29",
+			"widthPx": 3024,
+			"heightPx": 3703,
+			"authorAttributions": [
+				{
+					"displayName": "Leanne Porter",
+					"uri": "https://maps.google.com/maps/contrib/105219133198802514621",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVMeJdRRrq_XMw7HnATmFitPY9tDy7C5da5HP2ojzp4P7YnUC8=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q4m-a047aht3t6yWfCeZLOKAqVV0HEDZRKYteFEP2GI8_pSMTEogZaQCGs5mzg_BawbIjlW_Cp6vvRwaEi7uMCBROP2Qt69_AittpGk07RFenfXTcoqJ-VhWeCBcjBalBBQepy6tlmgrISoL1r9fnGfjm3br0JFhnzy",
+			"widthPx": 2438,
+			"heightPx": 1603,
+			"authorAttributions": [
+				{
+					"displayName": "Chen",
+					"uri": "https://maps.google.com/maps/contrib/103775619792608415733",
+					"photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKBBKRWrd8DrYRwIA7FkrkVjT_yLhieix2d8G-EhSv9cm844A=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q7PbLxmyNERRTcTLmf8wHEiXoege1Dpjv-zDjCb_3fCny23G6lYFqpA4WE3jjF-0iHAvgYtcRTQQwZtM52rDl67rGmRXy-c1S32SFTTynha9CkZRIr7IGJcIbE7uco354KmjVYBdYyKGAEJRbLkANyNEHpAfyOKU7dq",
+			"widthPx": 3600,
+			"heightPx": 4800,
+			"authorAttributions": [
+				{
+					"displayName": "Green Sprouts Vegan Restaurant",
+					"uri": "https://maps.google.com/maps/contrib/116486935453137493123",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX30vCraLdZKkaDX6mqxrBchrDX2hCVnt41CvvVHnUukrllKzA=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q7b4PW0NwWDzKT9X76yK_rpRotsOsWjBXWc8ZIUYrecmm-0aa5ynnv4cuHTNb8bmflttZuO08JkpdCuz_y90zxVqabNB4vYht_c17hhY_Jopuhx8t5ZXVwDrChOHjwNRMsVD4ca0u2OlSiL9ksp4MDLrICc0wdqBOQb",
+			"widthPx": 1440,
+			"heightPx": 1800,
+			"authorAttributions": [
+				{
+					"displayName": "Sandy Hu",
+					"uri": "https://maps.google.com/maps/contrib/114645648043067327639",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUgmq2d0vnyWs9xfpcoKnq7p9tjtRy8VxjewACFXgoaAO4Mw55h=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q6LVwI8MfpMaqKKyn7tdt6FWc0eNIUujL0ILK6KWY-S8HX-3H2fEM-0RHt-OleK72qbaXo09izOY3Jx__0ldP4KOGHMWuky4g-MUEzjlqftpVmcRYlHDruySR0iuns0Khib-HBHyoqApAgc1wvgHRuh_GfTwo3G9ElA",
+			"widthPx": 1024,
+			"heightPx": 1024,
+			"authorAttributions": [
+				{
+					"displayName": "Green Sprouts Vegan Restaurant",
+					"uri": "https://maps.google.com/maps/contrib/116486935453137493123",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX30vCraLdZKkaDX6mqxrBchrDX2hCVnt41CvvVHnUukrllKzA=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q5DQjwnGw0ZeiUf-9iXRTyHyT48pmFKHRrWiHitNeE_yysbD3c94XyI3ae-2OeV8mySqbi1fFNWTjwWjufBZcVnai7mNvGerR3x1x9_Tp8S601zROq6SNFgv03BuQmVvVHK76cQDhdGEZ0DcseHoDKa7hJEPmJYvBrb",
+			"widthPx": 3840,
+			"heightPx": 4800,
+			"authorAttributions": [
+				{
+					"displayName": "Green Sprouts Vegan Restaurant",
+					"uri": "https://maps.google.com/maps/contrib/116486935453137493123",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX30vCraLdZKkaDX6mqxrBchrDX2hCVnt41CvvVHnUukrllKzA=s100-p-k-no-mo"
+				}
+			]
+		},
+		{
+			"name": "places/ChIJE0JkojOvEmsRvo_DkZ7zBBg/photos/AXCi2Q4F8P6iMjLhz2TRm_E-YFIQGGqBxIbo3dLegPG2TNuTP_BTam2T2lpOWLpK_1VmIkUbYRAgo1jwPYcoLShVGlH3W2-z59PepV08yEevZkB28ypNIGTCLQhwmZ7kfmrjzZZTnHn20EnYwGu3QQTSotnWCDjh1pemqNrD",
+			"widthPx": 3024,
+			"heightPx": 4032,
+			"authorAttributions": [
+				{
+					"displayName": "Stevie C",
+					"uri": "https://maps.google.com/maps/contrib/114941691245777764940",
+					"photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV8Jn4vIarFFXivDMTVf1PGk_BpSP7MhhzGMVyMXb7HINvUEg9y=s100-p-k-no-mo"
+				}
+			]
+		}
+	],
+	"outdoorSeating": true,
+	"liveMusic": false,
+	"menuForChildren": false,
+	"servesDessert": true,
+	"goodForChildren": true,
+	"allowsDogs": true,
+	"restroom": true,
+	"goodForGroups": true,
+	"goodForWatchingSports": false,
+	"paymentOptions": {
+		"acceptsCreditCards": true,
+		"acceptsDebitCards": true,
+		"acceptsCashOnly": false,
+		"acceptsNfc": true
+	},
+	"parkingOptions": {
+		"freeParkingLot": true,
+		"freeStreetParking": true
+	},
+	"accessibilityOptions": {
+		"wheelchairAccessibleEntrance": true,
+		"wheelchairAccessibleRestroom": true,
+		"wheelchairAccessibleSeating": true
+	}
+}
