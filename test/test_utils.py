@@ -12,6 +12,13 @@ class TestGetPlaceData(unittest.TestCase):
             expected_result = json.load(f)
 
         self.assertEqual(place_data['name'], expected_result['name'])
+    
+    def test_get_place_data_types(self):
+        with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            place_data = get_place_data(json.load(f))
+        expected_result = ['french_restaurant', 'modern_french_restaurant', 'restaurant']
+
+        self.assertEqual(place_data['types'], expected_result)
 
     def test_get_place_data_id(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:

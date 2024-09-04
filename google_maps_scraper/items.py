@@ -3,7 +3,7 @@ import scrapy
 
 class Place(scrapy.Item):
     name = scrapy.Field()
-    
+    types = scrapy.Field()
 
     id = scrapy.Field()
     primaryTypeDisplayName = scrapy.Field()
