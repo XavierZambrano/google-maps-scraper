@@ -3,6 +3,8 @@ import json
 from dotenv import load_dotenv
 from scrapy import Request
 from openlocationcode.openlocationcode import encode as OLCencode
+from urllib.parse import unquote
+
 from google_maps_scraper.items import Place
 from google_maps_scraper.utils import GOOGLE_SUPPORTED_LANGUAGES
 
@@ -115,6 +117,8 @@ def get_place_data(data4):
     if data4[4]:
         place['rating'] = data4[4][7]
     place['googleMapsUri'] = 'https://maps.google.com/?cid=' + str(cid)
+    if data4[7]:
+        place['websiteUri'] = unquote(data4[7][0].split('/url?q=')[1]).split('&opi')[0]
     place['displayName'] = {
         'text': data4[11],
     }

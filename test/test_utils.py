@@ -68,6 +68,14 @@ class TestGetPlaceData(unittest.TestCase):
             expected_result = json.load(f)
         expected_result['plusCode'].pop('compoundCode')
         self.assertEqual(place_data['plusCode'], expected_result['plusCode'])
+    
+    def test_get_websiteUri(self):
+        with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            place_data = get_place_data(json.load(f))
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            expected_result = json.load(f)
+
+        self.assertEqual(place_data['websiteUri'], expected_result['websiteUri'])
 
     def test_get_place_data_location(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:

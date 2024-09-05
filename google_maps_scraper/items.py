@@ -14,4 +14,5 @@ class Place(scrapy.Item):
     location = scrapy.Field()
     rating = scrapy.Field()
     googleMapsUri = scrapy.Field()
+    websiteUri = scrapy.Field()
     displayName = scrapy.Field()
