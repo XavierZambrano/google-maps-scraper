@@ -128,6 +128,8 @@ def get_place_data(data4):
         for pdr in period_days_raw:
             # 0 == sunday, monday == 1 ...
             day = pdr[1] % days_of_the_week
+            if pdr[3] == [['Closed']]:
+                continue
             for p in pdr[3]:
                 # exists cases p[1][0] == [] it means 0 hours, 0 minutes
                 # exists cases p[1][0] == [15], it means 15 hours, 0 minutes
@@ -144,18 +146,7 @@ def get_place_data(data4):
                     }
                 }
                 periods.append(period)
-                # {
-                #     "open": {
-                #     "day": 0,
-                #     "hour": 12,
-                #     "minute": 0
-                #     },
-                #     "close": {
-                #     "day": 0,
-                #     "hour": 15,
-                #     "minute": 0
-                #     }
-                # }
+ 
         periods = sorted(periods, key=lambda x: (x['open']['day'], x['open']['hour']))
         place['regularOpeningHours'] = {}
         place['regularOpeningHours']['periods'] = periods

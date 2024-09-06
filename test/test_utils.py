@@ -97,7 +97,7 @@ class TestGetPlaceData(unittest.TestCase):
     def test_get_regularOpeningHours_weekdayDescriptions_closed_days(self):
         with open('test/assets/place_data_ChIJE0JkojOvEmsRvo_DkZ7zBBg.json', 'r') as f:
             place_data = get_place_data(json.load(f))
-        with open('test/expected/place_ChIJE0JkojOvEmsRvo_DkZ7zBBg.json', 'r') as f:
+        with open('test/expected/text_search_place_ChIJE0JkojOvEmsRvo_DkZ7zBBg.json', 'r') as f:
             expected_result = json.load(f)
 
         self.assertEqual(place_data['regularOpeningHours']['weekdayDescriptions'], expected_result['regularOpeningHours']['weekdayDescriptions'])

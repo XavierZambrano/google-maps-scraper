@@ -102,6 +102,8 @@ def get_weekday_descriptions(periods):
     for index, times in enumerate(hours):
         if times:
             descriptions.append(f"{days[index]}: {', '.join(times)}")
+        else:
+            descriptions.append(f'{days[index]}: Closed')
 
     # move sunday to the last position
     descriptions = descriptions[1:] + descriptions[:1]
