@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 # https://developers.google.com/custom-search/docs/xml_results_appendices?hl=en#supported-interface-languages
 GOOGLE_SUPPORTED_LANGUAGES = {
     "Afrikaans": "af",
@@ -75,3 +78,32 @@ GOOGLE_SUPPORTED_LANGUAGES = {
     "Vietnamese": "vi",
     "Welsh": "cy",
 }
+
+def get_weekday_descriptions(periods):
+    descriptions = []
+    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    
+    # Initialize a list to hold open hours for each day
+    hours = [[] for _ in range(7)]
+
+    # Populate the hours list with opening periods
+    for period in periods:
+        day = period['open']['day']
+        open = datetime.strptime(f"{period['open']['hour']}:{str(period['open']['minute']).zfill(2)}", "%H:%M")
+        close = datetime.strptime(f"{period['close']['hour']}:{str(period['close']['minute']).zfill(2)}", "%H:%M")
+
+
+        if open.strftime('%p') == close.strftime('%p'):
+            hours[day].append(f"{open.strftime('%-I:%M')}\u2009–\u2009{close.strftime('%-I:%M')}\u202f{close.strftime('%p')}")
+        else:
+            hours[day].append(f"{open.strftime('%-I:%M')}\u202f{open.strftime('%p')}\u2009–\u2009{close.strftime('%-I:%M')}\u202f{close.strftime('%p')}")
+
+    # Create descriptions for each day
+    for index, times in enumerate(hours):
+        if times:
+            descriptions.append(f"{days[index]}: {', '.join(times)}")
+
+    # move sunday to the last position
+    descriptions = descriptions[1:] + descriptions[:1]
+
+    return descriptions

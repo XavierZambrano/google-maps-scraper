@@ -6,7 +6,8 @@ from openlocationcode.openlocationcode import encode as OLCencode
 from urllib.parse import unquote
 
 from google_maps_scraper.items import Place
-from google_maps_scraper.utils import GOOGLE_SUPPORTED_LANGUAGES
+from google_maps_scraper.utils import GOOGLE_SUPPORTED_LANGUAGES, get_weekday_descriptions
+
 
 load_dotenv()  # load HTTP_PROXY and HTTPS_PROXY from .env file
 
@@ -119,6 +120,46 @@ def get_place_data(data4):
     place['googleMapsUri'] = 'https://maps.google.com/?cid=' + str(cid)
     if data4[7]:
         place['websiteUri'] = unquote(data4[7][0].split('/url?q=')[1]).split('&opi')[0]
+    
+    days_of_the_week = 7
+    if data4[203]:
+        period_days_raw = data4[203][0]
+        periods = []
+        for pdr in period_days_raw:
+            # 0 == sunday, monday == 1 ...
+            day = pdr[1] % days_of_the_week
+            for p in pdr[3]:
+                # exists cases p[1][0] == [] it means 0 hours, 0 minutes
+                # exists cases p[1][0] == [15], it means 15 hours, 0 minutes
+                period = {
+                    'open': {
+                        'day': day,
+                        'hour': p[1][0][0] if len(p[1][0]) > 0 else 0,
+                        'minute': p[1][0][1] if len(p[1][0]) > 1 else 0, 
+                    },
+                    'close': {
+                        'day': day,
+                        'hour': p[1][1][0]  if len(p[1][1]) > 0 else 0,
+                        'minute': p[1][1][1] if len(p[1][1]) > 1 else 0,
+                    }
+                }
+                periods.append(period)
+                # {
+                #     "open": {
+                #     "day": 0,
+                #     "hour": 12,
+                #     "minute": 0
+                #     },
+                #     "close": {
+                #     "day": 0,
+                #     "hour": 15,
+                #     "minute": 0
+                #     }
+                # }
+        periods = sorted(periods, key=lambda x: (x['open']['day'], x['open']['hour']))
+        place['regularOpeningHours'] = {}
+        place['regularOpeningHours']['periods'] = periods
+        place['regularOpeningHours']['weekdayDescriptions']= get_weekday_descriptions(periods)
     place['displayName'] = {
         'text': data4[11],
     }

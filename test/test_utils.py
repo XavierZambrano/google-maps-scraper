@@ -2,6 +2,7 @@ import unittest
 import json
 
 from google_maps_scraper.spiders.text_search import get_place_data
+from google_maps_scraper.utils import get_weekday_descriptions
 
 
 class TestGetPlaceData(unittest.TestCase):
@@ -76,6 +77,30 @@ class TestGetPlaceData(unittest.TestCase):
             expected_result = json.load(f)
 
         self.assertEqual(place_data['websiteUri'], expected_result['websiteUri'])
+    
+    def test_get_regularOpeningHours_periods(self):
+        with open('test/assets/place_data_ChIJdxxU1WeuEmsR11c4fswX-Io.json', 'r') as f:
+            place_data = get_place_data(json.load(f))
+        with open('test/expected/place_ChIJdxxU1WeuEmsR11c4fswX-Io.json', 'r') as f:
+            expected_result = json.load(f)
+
+        self.assertEqual(place_data['regularOpeningHours']['periods'], expected_result['regularOpeningHours']['periods'])
+
+    def test_get_regularOpeningHours_weekdayDescriptions(self):
+        with open('test/assets/place_data_ChIJdxxU1WeuEmsR11c4fswX-Io.json', 'r') as f:
+            place_data = get_place_data(json.load(f))
+        with open('test/expected/place_ChIJdxxU1WeuEmsR11c4fswX-Io.json', 'r') as f:
+            expected_result = json.load(f)
+
+        self.assertEqual(place_data['regularOpeningHours']['weekdayDescriptions'], expected_result['regularOpeningHours']['weekdayDescriptions'])
+
+    def test_get_regularOpeningHours_weekdayDescriptions_closed_days(self):
+        with open('test/assets/place_data_ChIJE0JkojOvEmsRvo_DkZ7zBBg.json', 'r') as f:
+            place_data = get_place_data(json.load(f))
+        with open('test/expected/place_ChIJE0JkojOvEmsRvo_DkZ7zBBg.json', 'r') as f:
+            expected_result = json.load(f)
+
+        self.assertEqual(place_data['regularOpeningHours']['weekdayDescriptions'], expected_result['regularOpeningHours']['weekdayDescriptions'])
 
     def test_get_place_data_location(self):
         with open('test/assets/place_data_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
@@ -184,3 +209,12 @@ class TestGetPlaceDataColloquialArea(unittest.TestCase):
         expected_result['displayName'].pop('languageCode')
 
         self.assertEqual(place_data['displayName'], expected_result['displayName'])
+
+class TestUtils(unittest.TestCase):
+    def test_get_weekday_descriptions(self):
+        with open('test/expected/place_ChIJF5-RdGquEmsR5rN_H74uSqQ.json', 'r') as f:
+            place_data = json.load(f)
+        result = get_weekday_descriptions(place_data['regularOpeningHours']['periods'])
+        expected_result = place_data['regularOpeningHours']['weekdayDescriptions']
+
+        self.assertEqual(result, expected_result)
