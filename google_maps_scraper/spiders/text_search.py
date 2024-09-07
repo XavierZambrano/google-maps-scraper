@@ -86,8 +86,7 @@ def get_place_data(data4):
 
     place['id'] = data4[78]
     place['name'] = f'places/{place["id"]}'
-    with open(f'place_data_{place["id"]}.json', 'w') as file:
-        json.dump(data4, file, indent=2)
+
     types = data4[13]
     if data4[76]:
         place['types'] = [fd[0] for fd in data4[76]]
