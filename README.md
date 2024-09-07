@@ -241,3 +241,15 @@ Example result:
     }, ...
 ]
 ```
+
+
+### Contributing
+
+Your contributions are always welcome!
+
+
+TODO
+- [ ] Allow more than one query
+    - Add a `queries: []` parameter to `TextSearchSpider.__init__()TextSearchSpider.__init__()`
+- [ ] Add reviews field
+- [ ] Add photos field
