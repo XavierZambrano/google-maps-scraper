@@ -117,6 +117,8 @@ def get_place_data(data4):
     }
     if data4[4]:
         place['rating'] = data4[4][7]
+        place['userRatingCount'] = data4[4][8]
+
     place['googleMapsUri'] = 'https://maps.google.com/?cid=' + str(cid)
     if data4[7]:
         place['websiteUri'] = unquote(data4[7][0].split('/url?q=')[1]).split('&opi')[0]
