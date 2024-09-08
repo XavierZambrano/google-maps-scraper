@@ -16,28 +16,32 @@ class TextSearchSpider(scrapy.Spider):
     name = "text_search"
     allowed_domains = ["google.com"]
 
-    def __init__(self, query='', language='en', max_results=20, *args, **kwargs):
+    def __init__(self, queries, language='en', max_results=20, *args, **kwargs):
         super(TextSearchSpider, self).__init__(*args, **kwargs)
-
+        
         self.page_size = 20
-
-        self.query = query
         self.language = language
         self.max_results = int(max_results)
 
-        if not self.query:
-            raise ValueError('query is required')
+        if isinstance(queries, list):
+            self.queries = queries
+        elif isinstance(queries, str):
+            self.queries = queries.split(',')
+        else:
+            raise ValueError('queries must be a str delimited by commas or a list')
+        
+        if not self.queries:
+            raise ValueError('queries is required')
         if self.language not in GOOGLE_SUPPORTED_LANGUAGES.values():
             raise ValueError(f'language {self.language} is not supported, please use one of: {json.dumps(GOOGLE_SUPPORTED_LANGUAGES, indent=2)}')
         if not (20 <= self.max_results <= 120 and self.max_results % 20 == 0):
             raise ValueError('max_results must be between 20 and 120 and multiple of 20')
 
-        self.query = self.query.replace(' ', '+')
-        self.start_urls = [f'https://www.google.com/maps/search/?api=1&query={self.query}&hl={self.language}']
-
     def start_requests(self):
-        for url in self.start_urls:
-            yield Request(url, dont_filter=True, meta={'offset': 0})
+        for query in self.queries:
+            query = query.replace(' ', '+')
+            url = f'https://www.google.com/maps/search/?api=1&query={query}&hl={self.language}'
+            yield Request(url, dont_filter=True, meta={'offset': 0, 'query': query})
 
     def parse(self, response):
         if response.meta['offset'] == 0:
@@ -63,6 +67,7 @@ class TextSearchSpider(scrapy.Spider):
             yield item
 
         offset = response.meta['offset']
+        query = response.meta['query']
         page = offset // self.page_size
         next_offset = offset + self.page_size
         if next_offset < self.max_results:
@@ -71,11 +76,11 @@ class TextSearchSpider(scrapy.Spider):
             latitude = data3[1][0][2]
             next_page_url = (f'https://www.google.com/search?tbm=map&authuser=0'
                              f'&hl={self.language}'
-                             f'&q={self.query}'
+                             f'&q={query}'
                              f'&tch=1'
                              f'&ech={page}'
                              f'&pb={get_protobuf(altitude, longitude, latitude, next_offset)}')
-            yield Request(next_page_url, dont_filter=True, meta={'offset': next_offset})
+            yield Request(next_page_url, dont_filter=True, meta={'offset': next_offset, 'query': query})
 
 
 def get_place_data(data4):

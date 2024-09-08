@@ -21,7 +21,7 @@ class TestTextSearchSpider(BetamaxTestCase):
         super().setUp()
 
         process = CrawlerProcess(install_root_handler=False)
-        process.crawl(TextSearchSpider, query='filler text to satisfy the query requirement')
+        process.crawl(TextSearchSpider, queries='filler text to satisfy the query requirement')
         self.spider = list(process.crawlers)[0].spider
 
     def test_parse_id(self):

@@ -52,12 +52,12 @@ Note: Remember activate the virtual environment before running the commands.
 
 Scrape the data and save in a CSV file.
 ```bash
-scrapy crawl text_search -a query="restaurants in sydney" -a language="en" -a max_results=120 -O results.csv
+scrapy crawl text_search -a queries="restaurants in sydney,second query" -a language="en" -a max_results=120 -O results.csv
 ```
 
 Scrape the data and save in JSON.
 ```bash
-scrapy crawl text_search -a query="restaurants in sydney" -a language="en" -a max_results=120 -O results.json
+scrapy crawl text_search -a queries="restaurants in sydney,second query" -a language="en" -a max_results=120 -O results.json
 ```
 
 For more information about scrapy crawl arguments, refer to the [scrapy docs](https://docs.scrapy.org/en/latest/topics/commands.html#std-command-crawl).
@@ -249,7 +249,5 @@ Your contributions are always welcome!
 
 
 TODO
-- [ ] Allow more than one query
-    - Add a `queries: []` parameter to `TextSearchSpider.__init__()TextSearchSpider.__init__()`
 - [ ] Add reviews field
 - [ ] Add photos field
