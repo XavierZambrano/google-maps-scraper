@@ -53,7 +53,9 @@ class TextSearchSpider(scrapy.Spider):
             json_str1 = response.text[18:-6]
             json_str = json_str1.replace('\\n', '').replace('\\"', '\"')
             e_index = json_str.rfind('"e":')
-            data3 = json.loads(json_str[:e_index - 2])
+            # Is necessary the unicode_escape, the response has strings like '\\uxxxx'
+            json_str = json_str[:e_index - 2].encode().decode('unicode_escape')
+            data3 = json.loads(json_str)
 
         # skip the first one, it's other data [1:]
         for index, raw_data in enumerate(data3[0][1][1:]):
