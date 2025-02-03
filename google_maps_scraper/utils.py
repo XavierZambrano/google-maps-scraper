@@ -109,3 +109,36 @@ def get_weekday_descriptions(periods):
     descriptions = descriptions[1:] + descriptions[:1]
 
     return descriptions
+
+def get_periods(data4):
+    days_of_the_week = 7
+
+    period_days_raw = data4[203][0]
+    periods = []
+    for pdr in period_days_raw:
+        # 0 == sunday, monday == 1 ...
+        day = pdr[1] % days_of_the_week
+        if pdr[3] == [['Closed']]:
+            continue
+        for p in pdr[3]:
+            # cases:
+            # [] it means 0 hours, 0 minutes
+            # [15], it means 15 hours, 0 minutes
+            # [15, 30], it means 15 hours, 30 minutes
+            # [None, 30], it means 0 hours, 30 minutes
+            period = {
+                'open': {
+                    'day': day,
+                    'hour': p[1][0][0] if len(p[1][0]) > 0 and bool(p[1][0][0]) else 0,
+                    'minute': p[1][0][1] if len(p[1][0]) > 1 else 0,
+                },
+                'close': {
+                    'day': day,
+                    'hour': p[1][1][0] if len(p[1][1]) > 0 and bool(p[1][1][0]) else 0,
+                    'minute': p[1][1][1] if len(p[1][1]) > 1 else 0,
+                }
+            }
+            periods.append(period)
+
+    periods = sorted(periods, key=lambda x: (x['open']['day'], x['open']['hour']))
+    return periods
