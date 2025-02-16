@@ -128,9 +128,10 @@ def get_place_data(data4):
     if data4[7]:
         place['websiteUri'] = unquote(data4[7][0].split('/url?q=')[1]).split('&opi')[0]
         place['regularOpeningHours'] = {}
-        periods = get_periods(data4[203][0])
-        place['regularOpeningHours']['periods'] = periods
-        place['regularOpeningHours']['weekdayDescriptions'] = get_weekday_descriptions(periods)
+        if data4[203]:
+            periods = get_periods(data4[203][0])
+            place['regularOpeningHours']['periods'] = periods
+            place['regularOpeningHours']['weekdayDescriptions'] = get_weekday_descriptions(periods)
     place['displayName'] = {
         'text': data4[11],
     }
