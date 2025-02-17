@@ -15,12 +15,12 @@ class TextSearchSpider(scrapy.Spider):
     name = "text_search"
     allowed_domains = ["google.com"]
 
-    def __init__(self, queries, language='en', max_results=20, *args, **kwargs):
+    def __init__(self, queries, language='en', limit=20, *args, **kwargs):
         super(TextSearchSpider, self).__init__(*args, **kwargs)
         
         self.page_size = 20
         self.language = language
-        self.max_results = int(max_results)
+        self.limit = int(limit)
 
         if isinstance(queries, list):
             self.queries = queries
@@ -33,8 +33,8 @@ class TextSearchSpider(scrapy.Spider):
             raise ValueError('queries is required')
         if self.language not in GOOGLE_SUPPORTED_LANGUAGES.values():
             raise ValueError(f'language {self.language} is not supported, please use one of: {json.dumps(GOOGLE_SUPPORTED_LANGUAGES, indent=2)}')
-        if not (20 <= self.max_results <= 120 and self.max_results % 20 == 0):
-            raise ValueError('max_results must be between 20 and 120 and multiple of 20')
+        if not (20 <= self.limit <= 120 and self.limit % 20 == 0):
+            raise ValueError('limit must be between 20 and 120 and multiple of 20')
 
     def start_requests(self):
         for query in self.queries:
@@ -69,7 +69,7 @@ class TextSearchSpider(scrapy.Spider):
         query = response.meta['query']
         page = offset // self.page_size
         next_offset = offset + self.page_size
-        if next_offset < self.max_results:
+        if next_offset < self.limit:
             altitude = data3[1][0][0]
             longitude = data3[1][0][1]
             latitude = data3[1][0][2]
